@@ -1,0 +1,13 @@
+bin/
+obj/
+dist/
+.vs/
+.idea/
+*.user
+*.suo
+*.log
+local.settings.json
+*.local.json
+evidence/
+_deploy_backups/
+publishing/

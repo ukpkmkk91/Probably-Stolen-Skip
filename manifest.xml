@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>dialogue_flow</ID>
+  <Name>深空当铺：允许跳过对话</Name>
+  <Author>Clemm</Author>
+  <ModVersion>0.1.2</ModVersion>
+  <Description>交易开场对白的平滑加速、过渡跳过与首遇保护。</Description>
+  <GameVersions>
+    <Version>0.46D</Version>
+  </GameVersions>
+  <Prerequisites />
+  <Assemblies>
+    <Assembly>DialogueFlow.dll</Assembly>
+  </Assemblies>
+  <Capabilities />
+</Manifest>

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <AssemblyName>DialogueFlow</AssemblyName>
+    <RootNamespace>DialogueFlow</RootNamespace>
+    <Version>0.1.2</Version>
+    <Deterministic>true</Deterministic>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GameManaged>$(GameDir)/Probably Stolen_Data/Managed</GameManaged>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src/**/*.cs" />
+    <Reference Include="$(GameManaged)/Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(GameManaged)/0Harmony.dll" Private="false" />
+    <Reference Include="$(GameManaged)/UnityEngine*.dll" Private="false" />
+    <Reference Include="$(GameManaged)/Unity.TextMeshPro.dll" Private="false" />
+    <Reference Include="$(GameManaged)/Febucci.*.dll" Private="false" />
+  </ItemGroup>
+  <Target Name="CheckGameInputs" BeforeTargets="ResolveReferences">
+    <Error Condition="'$(GameDir)' == ''" Text="Set GameDir to the installed game directory." />
+    <Error Condition="!Exists('$(GameManaged)/Assembly-CSharp.dll')" Text="Assembly-CSharp.dll was not found in GameDir." />
+  </Target>
+</Project>
